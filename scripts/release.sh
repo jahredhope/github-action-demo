@@ -14,6 +14,7 @@ fi
 
 # Split the version by full-stop, taking the first segment
 major_version=$(echo "$version" | cut -d "." -f 1)
+minor_version=$(echo "$version" | cut -d "." -f 2)
 
 # Detach so we don't affect the current branch
 git checkout --detach
@@ -26,7 +27,8 @@ git commit --message "$version"
 
 changeset tag
 
-# Create a tag for a more generic version. E.g v1 or v2
+# Create a tag for flexible version selection. E.g. v1 and v1.0
 git tag --force "$major_version"
+git tag --force "$major_version.$minor_version"
 
 git push --force --tags

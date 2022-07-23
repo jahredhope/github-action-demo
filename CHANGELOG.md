@@ -1,5 +1,11 @@
 # github-action-demo
 
+## 1.0.5
+
+### Patch Changes
+
+- Release minor version flexible tags
+
 ## 1.0.4
 
 ### Patch Changes

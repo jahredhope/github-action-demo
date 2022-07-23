@@ -4,11 +4,13 @@ specifiers:
   '@actions/core': ^1.9.0
   '@actions/github': ^5.0.3
   '@vercel/ncc': ^0.34.0
+  typescript: ^4.7.4
 
 dependencies:
   '@actions/core': 1.9.0
   '@actions/github': 5.0.3
   '@vercel/ncc': 0.34.0
+  typescript: 4.7.4
 
 packages:
 
@@ -166,6 +168,12 @@ packages:
   /tunnel/0.0.6:
     resolution: {integrity: sha512-1h/Lnq9yajKY2PEbBadPXj3VxsDDu844OnaAo52UVmIzIvwwtBPIuNvkjuzBlTWpfJyUbG3ez0KSBibQkj4ojg==}
     engines: {node: '>=0.6.11 <=0.7.0 || >=0.7.3'}
+    dev: false
+
+  /typescript/4.7.4:
+    resolution: {integrity: sha512-C0WQT0gezHuw6AdY1M2jxUO83Rjf0HP7Sk1DtXj6j1EwkQNZrHAg2XPWlq62oqEhYvONq5pkC2Y9oPljWToLmQ==}
+    engines: {node: '>=4.2.0'}
+    hasBin: true
     dev: false
 
   /universal-user-agent/6.0.0:

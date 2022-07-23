@@ -52,7 +52,9 @@ git commit -m "Build assets"
 
 git checkout -- .gitignore 
 
-git tag -a "$version" --force --message "$current_branch - $version"
+git tag -a "$version" --force --message "$branch_name - $version"
+
+git push --follow-tags origin master "$branch_name" 
 
 echo "Returning to $current_branch"
 git checkout "$current_branch"

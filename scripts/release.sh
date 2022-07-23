@@ -1,9 +1,9 @@
-if [[ `git status --porcelain` ]]; then
-  git status
-  echo "Unable to release with pending changes"
+changed_files=$(git status --porcelain)
+
+if [[ -n "$changed_files" ]]; then
+  echo "Error: Unable to release with pending changes"
+  echo "$changed_files"
   exit 1
-else
-  echo "Confirmed no pending changes"
 fi
 
 pnpm build
@@ -32,6 +32,8 @@ echo "!dist" >> .gitignore
 git add dist
 
 git commit -m "Build assets"
+
+git checkout -- .gitignore 
 
 echo "Returning to $current_branch"
 git checkout "$current_branch"

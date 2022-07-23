@@ -1,5 +1,11 @@
 # github-action-demo
 
+## 1.1.1
+
+### Patch Changes
+
+- Update release logic
+
 ## 1.1.0
 
 ### Minor Changes

@@ -27,7 +27,7 @@ jobs:
           # cache: pnpm
 
       - name: Install
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
 
       - name: Release
         run: ./scripts/release.sh v1

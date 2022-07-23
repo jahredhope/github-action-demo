@@ -22,9 +22,9 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Example action
-        # By branch
+        # By major version
         uses: jahredhope/github-action-demo@v1
-        # By tag
+        # By specific version
         uses: jahredhope/github-action-demo@v1.0.3
         # By commit
         uses: jahredhope/github-action-demo@va84c1b7edd8162daf28f75ce56fd533465daa741

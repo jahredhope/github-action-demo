@@ -12,16 +12,21 @@ if [[ -n "$existing_tag" ]]; then
   exit 0
 fi
 
-branch_name=$(echo "$version" | cut -d "." -f 1)
+# Split the version by full-stop, taking the first segment
+major_version=$(echo "$version" | cut -d "." -f 1)
 
+# Detach so we don't affect the current branch
 git checkout --detach
 
+# Push the dist folder even though it's ignored
 git add --force dist
 
+# Create a new commit with the compiled assets
 git commit --message "$version"
 
 changeset tag
 
-git tag "$branch_name"
+# Create a tag for a more generic version. E.g v1 or v2
+git tag "$major_version"
 
-git push --force --follow-tags origin "HEAD:refs/heads/${branch_name}"
+git push --force --follow-tags

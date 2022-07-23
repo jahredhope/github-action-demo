@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 version="$1"
 
 if [[ -z "$version" ]]; then
@@ -22,7 +24,7 @@ pnpm build
 
 current_branch=$(git branch --show-current)
 
-if [[current_branch != "master"]]; then
+if [[ $current_branch != "master" ]]; then
   echo "Releasing from non-master branch is not supported"
   exit 1
 fi

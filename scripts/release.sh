@@ -50,7 +50,7 @@ git commit -m "Build assets"
 
 git checkout -- .gitignore 
 
-git tag -a "$version" --force --message "$branch_name - $version"
+git tag -a "$version" --force --message "Branch: $branch_name\n\nVersion:$version"
 
 git push origin --force "$branch_name"
 

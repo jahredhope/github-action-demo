@@ -4,7 +4,9 @@ import { context } from "@actions/github";
 try {
   // `who-to-greet` input defined in action metadata file
   const nameToGreet = getInput("who-to-greet");
-  console.log(`Hello ${nameToGreet}!`);
+  console.log(
+    `Hello ${nameToGreet}! Looks like you go this working. Congratulations.`
+  );
   const time = new Date().toTimeString();
   setOutput("time", time);
   // Get the JSON webhook payload for the event that triggered the workflow

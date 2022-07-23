@@ -6,6 +6,8 @@ An example project for setting up a GitHub action.
 - Bundling with [@vercel/ncc](https://github.com/vercel/ncc)
 - Compiling and committing to alternative branches to avoid committing assets in history
 
+## Usage
+
 ```yaml
 name: "example-workflow"
 

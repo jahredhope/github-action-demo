@@ -39,7 +39,7 @@ git status
 echo "Making back-up"
 git branch --force back-up
 
-echo "Making forcing $branch_name to be current head"
+echo "Forcing $branch_name to be current head"
 git branch --force "$branch_name"
 git checkout "$branch_name"
 
@@ -54,7 +54,7 @@ git checkout -- .gitignore
 
 git tag -a "$version" --force --message "$branch_name - $version"
 
-git push "$branch_name"
+git push origin "$branch_name"
 
 git push origin ":refs/tags/$version"
 

@@ -3,16 +3,14 @@
 # exit when any command fails
 set -e
 
-version="$1"
+version="v$(cat package.json | jq --raw-output ".version")"
 
-if [[ -z "$version" ]]; then
-  echo "Error: Missing version argument. $version"
-  exit 1
-fi
+echo "Checking for existing tag"
+existing_tag=$(git ls-remote --tags -q origin "$version")
 
-if [[ $version != v* ]]; then
-  echo "Error: Version argument does not begin with v. Version recieved: $version"
-  exit 1
+if [[ -n "$existing_tag" ]]; then
+  echo "Warning: Tag for this version already exists. Exiting without action. $version"
+  exit 0
 fi
 
 changed_files=$(git status --porcelain)

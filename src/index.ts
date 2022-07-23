@@ -5,7 +5,7 @@ try {
   // `who-to-greet` input defined in action metadata file
   const nameToGreet = getInput("who-to-greet");
   console.log(
-    `Hello ${nameToGreet}! Looks like you go this working. Congratulations.`
+    `Hello ${nameToGreet}! Looks like you got this working. Congratulations.`
   );
   const time = new Date().toTimeString();
   setOutput("time", time);

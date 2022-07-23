@@ -32,11 +32,6 @@ fi
 
 branch_name="v1"
 
-git status
-
-echo "Making back-up"
-git branch --force back-up
-
 echo "Forcing $branch_name to be current head"
 git branch --force "$branch_name"
 git checkout "$branch_name"

@@ -14,7 +14,7 @@ if [[ -n "$existing_tag" ]]; then
   exit 0
 fi
 
-# Split the version by full-stop, taking the first and second segment
+# Split the version by full-stop, taking the first and second segments
 major_version=$(echo "$version" | cut -d "." -f 1)
 minor_version=$(echo "$version" | cut -d "." -f 2)
 

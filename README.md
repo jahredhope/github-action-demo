@@ -4,7 +4,7 @@ An example project for setting up a GitHub action.
 
 - Automated versioning and release notes with [Changesets](https://github.com/changesets/changesets)
 - Bundling with [@vercel/ncc](https://github.com/vercel/ncc)
-- Compiling and committing to alternative branches to avoid committing assets in history
+- Compiling and committing by tag. Avoiding adding built assets to the commit history and allowing flexible version selection.
 
 ## Usage
 

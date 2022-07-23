@@ -52,9 +52,11 @@ git commit -m "Build assets"
 
 git checkout -- .gitignore 
 
-# git tag -a "$version" --force --message "$branch_name - $version"
+git tag -a "$version" --force --message "$branch_name - $version"
 
-git push --follow-tags --set-upstream origin "$branch_name"
+git push "$branch_name"
+
+git push origin ":refs/tags/$version"
 
 echo "Returning to $current_branch"
 git checkout "$current_branch"

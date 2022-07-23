@@ -28,4 +28,7 @@ jobs:
       # By commit
       - name: Example action
         uses: jahredhope/github-action-demo@va84c1b7edd8162daf28f75ce56fd533465daa741
+      # By latest
+      - name: Example action
+        uses: jahredhope/github-action-demo@latest
 ```

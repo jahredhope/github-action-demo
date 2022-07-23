@@ -51,5 +51,7 @@ git push origin --force "$branch_name"
 
 git push origin --force "refs/tags/$version:refs/tags/$version"
 
+git push origin --force "refs/tags/$version:refs/tags/latest"
+
 echo "Returning to $current_branch"
 git checkout "$current_branch"

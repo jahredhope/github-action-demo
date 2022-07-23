@@ -1,5 +1,11 @@
 # github-action-demo
 
+## 1.0.3
+
+### Patch Changes
+
+- 51fd644: Fix typo in user message
+
 ## 1.0.2
 
 ### Patch Changes

@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# exit when any command fails
+set -e
+
 version="$1"
 
 if [[ -z "$version" ]]; then

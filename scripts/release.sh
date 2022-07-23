@@ -1,3 +1,15 @@
+version="$1"
+
+if [[ -z "$version" ]]; then
+  echo "Error: Missing version argument. $version"
+  exit 1
+fi
+
+if [[ $version != v* ]]; then
+  echo "Error: Version argument does not begin with v. Version recieved: $version"
+  exit 1
+fi
+
 changed_files=$(git status --porcelain)
 
 if [[ -n "$changed_files" ]]; then
@@ -34,6 +46,8 @@ git add dist
 git commit -m "Build assets"
 
 git checkout -- .gitignore 
+
+git tag -a "$version" --force --message "$current_branch - $version"
 
 echo "Returning to $current_branch"
 git checkout "$current_branch"

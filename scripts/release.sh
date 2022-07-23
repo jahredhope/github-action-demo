@@ -32,26 +32,14 @@ fi
 
 branch_name=$(echo "$version" | cut -d "." -f 1)
 
-echo "Forcing $branch_name to be current head"
-git branch --force "$branch_name"
-git checkout "$branch_name"
+git checkout --detach
 
 echo "Committing new content"
-echo "!dist" >> .gitignore
 
-git add dist
+git add --force dist
 
-git commit -m "Build assets"
+git commit --message "$version"
 
-git checkout -- .gitignore 
+changeset tag
 
-git tag -a "$version" --force --message "Branch: $branch_name\n\nVersion:$version"
-
-git push origin --force "$branch_name"
-
-git push origin --force "refs/tags/$version:refs/tags/$version"
-
-git push origin --force "refs/tags/$version:refs/tags/latest"
-
-echo "Returning to $current_branch"
-git checkout "$current_branch"
+git push --force --follow-tags origin "HEAD:refs/heads/${branch}"

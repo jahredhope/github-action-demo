@@ -21,16 +21,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      # By branch
       - name: Example action
+        # By branch
         uses: jahredhope/github-action-demo@v1
-      # By tag
-      - name: Example action
+        # By tag
         uses: jahredhope/github-action-demo@v1.0.3
-      # By commit
-      - name: Example action
+        # By commit
         uses: jahredhope/github-action-demo@va84c1b7edd8162daf28f75ce56fd533465daa741
-      # By latest
-      - name: Example action
-        uses: jahredhope/github-action-demo@latest
 ```

@@ -42,4 +42,4 @@ git commit --message "$version"
 
 changeset tag
 
-git push --force --follow-tags origin "HEAD:refs/heads/${branch}"
+git push --force --follow-tags origin "HEAD:refs/heads/${current_branch}"

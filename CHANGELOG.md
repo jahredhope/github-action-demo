@@ -1,5 +1,11 @@
 # github-action-demo
 
+## 1.1.0
+
+### Minor Changes
+
+- 00fa7a9: Add publishing to latest
+
 ## 1.0.3
 
 ### Patch Changes

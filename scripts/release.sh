@@ -27,6 +27,6 @@ git commit --message "$version"
 changeset tag
 
 # Create a tag for a more generic version. E.g v1 or v2
-git tag "$major_version"
+git tag --force "$major_version"
 
 git push --force --follow-tags

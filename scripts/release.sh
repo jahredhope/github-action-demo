@@ -5,10 +5,10 @@ set -e
 
 version="v$(cat package.json | jq --raw-output ".version")"
 
-existing_tag=$(git ls-remote --tags -q origin "$version")
+existing_tag=$(git ls-remote --tags --quiet origin "$version")
 
 if [[ -n "$existing_tag" ]]; then
-  echo "Warning: Tag for this version already exists. Exiting without action. Version: $version"
+  echo "Tag for this version already exists. Exiting without release. Version: $version"
   exit 0
 fi
 

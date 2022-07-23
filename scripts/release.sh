@@ -3,8 +3,10 @@
 # exit when any command fails
 set -e
 
+# Retrieve version from package.json
 version="v$(cat package.json | jq --raw-output ".version")"
 
+# Check for an existing tag
 existing_tag=$(git ls-remote --tags --quiet origin "$version")
 
 if [[ -n "$existing_tag" ]]; then
@@ -12,14 +14,14 @@ if [[ -n "$existing_tag" ]]; then
   exit 0
 fi
 
-# Split the version by full-stop, taking the first segment
+# Split the version by full-stop, taking the first and second segment
 major_version=$(echo "$version" | cut -d "." -f 1)
 minor_version=$(echo "$version" | cut -d "." -f 2)
 
 # Detach so we don't affect the current branch
 git checkout --detach
 
-# Push the dist folder even though it's ignored
+# Add the dist folder even though it's ignored
 git add --force dist
 
 # Create a new commit with the compiled assets
@@ -32,4 +34,5 @@ changeset tag
 git tag --force "$major_version"
 git tag --force "$major_version.$minor_version"
 
+# Push tags, override existing when required
 git push --force --tags

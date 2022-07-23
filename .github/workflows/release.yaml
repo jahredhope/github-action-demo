@@ -29,5 +29,10 @@ jobs:
       - name: Install
         run: pnpm install --frozen-lockfile
 
+      - name: Setup git
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
+
       - name: Release
         run: ./scripts/release.sh v1

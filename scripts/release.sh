@@ -30,7 +30,7 @@ if [[ $current_branch != "master" ]]; then
   exit 1
 fi
 
-branch_name="v1"
+branch_name=$(echo "$version" | cut -d "." -f 1)
 
 echo "Forcing $branch_name to be current head"
 git branch --force "$branch_name"

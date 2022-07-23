@@ -1,5 +1,11 @@
 # github-action-demo
 
+## 1.0.3
+
+### Patch Changes
+
+- Use test tag
+
 ## 1.0.2
 
 ### Patch Changes

@@ -22,6 +22,6 @@ git commit --message "$version"
 
 changeset tag
 
-git tag "$branch_name"
+git tag "$branch_name.x"
 
 git push --force --follow-tags origin "HEAD:refs/heads/${branch_name}"

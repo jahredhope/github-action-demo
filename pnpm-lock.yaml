@@ -3,12 +3,14 @@ lockfileVersion: 5.4
 specifiers:
   '@actions/core': ^1.9.0
   '@actions/github': ^5.0.3
+  '@types/node': ^18.0.6
   '@vercel/ncc': ^0.34.0
   typescript: ^4.7.4
 
 dependencies:
   '@actions/core': 1.9.0
   '@actions/github': 5.0.3
+  '@types/node': 18.0.6
   '@vercel/ncc': 0.34.0
   typescript: 4.7.4
 
@@ -123,6 +125,10 @@ packages:
     resolution: {integrity: sha512-MFZOU5r8SwgJWDMhrLUSvyJPtVsqA6VnbVI3TNbsmw+Jnvrktzvq2fYES/6RiJA/5Ykdwq4mJmtlYUfW7CGjmw==}
     dependencies:
       '@octokit/openapi-types': 12.10.1
+    dev: false
+
+  /@types/node/18.0.6:
+    resolution: {integrity: sha512-/xUq6H2aQm261exT6iZTMifUySEt4GR5KX8eYyY+C4MSNPqSh9oNIP7tz2GLKTlFaiBbgZNxffoR3CVRG+cljw==}
     dev: false
 
   /@vercel/ncc/0.34.0:

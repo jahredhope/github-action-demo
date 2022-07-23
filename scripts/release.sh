@@ -25,9 +25,10 @@ git add --force dist
 # Create a new commit with the compiled assets
 git commit --message "$version"
 
+# Apply Changeset Tags / Releases
 changeset tag
 
-# Create a tag for flexible version selection. E.g. v1 and v1.0
+# Apply additional flexible-version tags. E.g. v1 and v1.0
 git tag --force "$major_version"
 git tag --force "$major_version.$minor_version"
 

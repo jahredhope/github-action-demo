@@ -29,4 +29,4 @@ changeset tag
 # Create a tag for a more generic version. E.g v1 or v2
 git tag --force "$major_version"
 
-git push --force --follow-tags
+git push --force --tags
